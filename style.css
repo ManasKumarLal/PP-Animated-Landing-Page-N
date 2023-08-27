@@ -1,0 +1,537 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor:default;
+}
+*::selection{
+    color: yellow;
+    background-color: black;
+}
+*::-webkit-scrollbar{
+    display: none;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+}
+#cursor{
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+}
+#container{
+    height: 100%;
+    width: 100%;
+    padding: 2% 2%;
+}
+#main{
+    height: 100%;
+    width: 100%;
+    /* background-color: red; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+}
+#main>img{
+    height: 700px;
+    width: 500px;
+    object-fit: cover;
+    z-index: 1;
+    animation-name: imganime;
+    animation-duration:10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform: rotateX(40deg) rotateY(40deg);
+}
+/* nav */
+#navbar{
+    width: 100%;
+    position:absolute;
+    top: 0%;
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+#navbar #left{
+    font-size: 15px;
+    letter-spacing: 8px;
+    font-weight: 100;
+}
+#navbar #middle{
+    color: darkgoldenrod;
+    letter-spacing: 5px;
+    margin-right: 17%;
+}
+#navbar #right{
+    letter-spacing: 4px;
+    font-size: 15px;
+}
+/* nav bar end */
+
+/* video div */
+#video-div{
+    position: absolute;
+    top: 18%;
+    left: 1%;
+    background:linear-gradient(to bottom,darkgoldenrod,black,darkred,darkblue,black);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+/* video div end */
+
+/* text div */
+#text-div{
+    font-size: 30px;
+    position: absolute;
+    top: 12%;
+    width: 50%;
+    font-weight: 800;
+    z-index: 2;
+    text-align: center;
+    line-height: 35px;
+    text-transform: uppercase;
+    color: #1C1819;
+    -webkit-text-stroke: 1px white;
+}
+/* text div end*/
+/* for scroll divs */
+#scroll-div, #scroll-div2, #scroll-div3{
+    position:absolute;
+    width: 100%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+#scroll-div{
+    top: 23%;
+}
+#scroll-div2{
+    top: 40%;
+}
+#scroll-div3{
+    top: 57%;
+}
+#scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+    display: inline-block;
+    font-size: 150px;
+    text-transform: uppercase;
+    margin-right: 40px;
+    letter-spacing: 4px;
+    font-weight: 900;
+}
+#scroll-div h1{
+    animation-name: scroll;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#scroll-div3 h1{
+    animation-name: scroll;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+}
+#scroll-div2{
+    z-index: 2;
+}
+#scroll-div2 h1{
+    -webkit-text-stroke: 2px black;
+    color: transparent;
+}
+#scroll-div::-webkit-scrollbar{
+    display: none;
+}
+#scroll-div2::-webkit-scrollbar{
+    display: none;
+}
+#scroll-div3::-webkit-scrollbar{
+    display: none;
+}
+/* for scroll divs end */
+
+/* text animation */
+@keyframes scroll{
+    0%{
+        transform: translate(calc(-100% - 42px));
+    }
+    100%{
+        transform: translate(0);
+    }
+}
+/* text animation end */
+
+/* bottom left text */
+#text-bottom{
+    position: absolute;
+    top: 80%;
+    font-size: 20px;
+    font-weight: 900;
+    text-transform: uppercase;
+    width: 24%;
+    left: 1%;
+    line-height: 20px;
+}
+/* bottom left text end */
+
+/* footer */
+#footer{
+    width: 100%;
+    position: absolute;
+    bottom: 0%;
+    display: flex;
+    justify-content: space-between;
+}
+#footer>h6{
+    margin-left: 1%;
+    font-size: 12px;
+    font-weight: 100;
+    text-transform: uppercase;
+}
+#footer>h5{
+    margin-right: 50%;
+    font-weight: 900;
+    letter-spacing: 7px;
+    transform: translate(50%);
+}
+/* footer end */
+
+/*******************************animation*********************************/
+@keyframes imganime{
+    0%{
+        transform: rotatex(40deg) rotatey(40deg);
+    }
+    16.66%{
+        transform: rotatex(-40deg) rotatey(40deg);
+    }
+    33.33%{
+        transform: rotatex(40deg) rotatey(-40deg);
+    }
+    49.99%{
+        transform: rotatex(-40deg) rotatey(-40deg);
+    }
+    66.66%{
+        transform: rotatex(40deg) rotatey(-40deg);
+    }
+    83.33%{
+        transform: rotatex(-40deg) rotatey(40deg);
+    }
+    100%{
+        transform: rotatex(40deg) rotatey(40deg);
+    }
+}
+/******************* Responsiveness *************************/
+@media (max-width:1655px){
+    #text-div{
+        font-size:25px ;
+        top: 18%;
+        line-height: 30px;
+    }
+    #main>img{
+        height: 600px;
+        width: 420px;
+        object-fit: cover;
+        transition: all ease 1s;
+    }
+    #scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+        font-size: 130px;
+        transition: all ease 0.5s;
+    }
+    #scroll-div,#scroll-div2,#scroll-div3{
+        transition: all ease 0.5s;
+    }
+    #scroll-div{
+        top: 25%;
+    }
+    #scroll-div2{
+        top: 42%;
+    }
+    #scroll-div3{
+        top: 59%;
+    }
+}
+
+
+@media (max-width:1375px){
+    #text-div{
+        font-size:20px ;
+        line-height: 25px;
+        top: 22%;
+    }
+    #main>img{
+        height: 540px;
+        width: 390px;
+        object-fit: cover;
+        transition:all ease 1s;
+    }
+    #scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+        font-size: 100px;
+        transition: all ease 0.5s;
+    }
+    #scroll-div,#scroll-div2,#scroll-div3{
+        transition: all ease 0.5s;
+    }
+    #scroll-div{
+        top: 31%;
+    }
+    #scroll-div2{
+        top: 46%;
+    }
+    #scroll-div3{
+        top: 61%;
+    }
+    #text-bottom{
+        font-size: 18px;
+        font-weight: 800;
+        line-height: 18px;
+        transition: all ease 0.5s;
+    }
+}
+
+
+@media (max-width:1113px){
+    #text-div{
+        font-size:16px ;
+        line-height: 20px;
+        top: 26%;
+    }
+    #main>img{
+        height: 470px;
+        width: 320px;
+        object-fit: cover;
+        transition:all ease 1s;
+    }
+    #scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+        font-size: 80px;
+        transition: all ease 0.5s;
+    }
+    #scroll-div,#scroll-div2,#scroll-div3{
+        transition: all ease 0.5s;
+    }
+    #scroll-div{
+        top: 37%;
+    }
+    #scroll-div2{
+        top: 49%;
+    }
+    #scroll-div3{
+        top: 61%;
+    }
+    /*bottom text*/
+    #text-bottom{
+        font-size: 15px;
+        font-weight: 800;
+        line-height: 18px;
+        transition: all ease 0.5s;
+    }
+}
+
+
+@media (max-width:880px){
+    #text-div{
+        font-size:16px ;
+        line-height: 14px;
+        top: 27%;
+        width: 65%;
+        transition: all ease 0.5s;
+    }
+    #main>img{
+        height: 470px;
+        width: 320px;
+        object-fit: cover;
+        transition:all ease 1s;
+    }
+    #scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+        font-size: 80px;
+        transition: all ease 0.5s;
+    }
+    #scroll-div,#scroll-div2,#scroll-div3{
+        transition: all ease 0.5s;
+    }
+    #scroll-div{
+        top: 37%;
+    }
+    #scroll-div2{
+        top: 48%;
+    }
+    #scroll-div3{
+        top: 59%;
+    }
+    /*bottom text*/
+    #text-bottom{
+        font-size: 13px;
+        font-weight: 800;
+        line-height: 13px;
+        transition: all ease 0.5s;
+    }
+}
+
+
+@media (max-width:680px){
+    #navbar #left{
+        font-size: 13px;
+        letter-spacing: 1px;
+        font-weight: 100;
+        transition: all ease 0.5s;
+    }
+    #navbar #middle{
+        font-size: 13px;
+        color: darkgoldenrod;
+        letter-spacing: 1px;
+        margin-right: 8%;
+        transition: all ease 0.5s;
+    }
+    #navbar #right{
+        letter-spacing: 4px;
+        font-size: 15px;
+        transition: all ease 0.5s;
+    }
+    /*video div*/
+    #video-div{
+        top: 10%;
+        font-size: 15px;
+        transition: all ease 0.5s;
+    }
+    #text-div{
+        font-size:15px ;
+        line-height: 15px;
+        top: 27%;
+        width: 84%;
+        transition: all ease 0.5s;
+    }
+    #main>img{
+        height: 470px;
+        width: 320px;
+        object-fit: cover;
+        transition:all ease 1s;
+    }
+    #scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+        font-size: 80px;
+        transition: all ease 0.5s;
+    }
+    #scroll-div,#scroll-div2,#scroll-div3{
+        transition: all ease 0.5s;
+    }
+    #scroll-div{
+        top: 37%;
+    }
+    #scroll-div2{
+        top: 48%;
+    }
+    #scroll-div3{
+        top: 59%;
+    }
+    /*bottom text*/
+    #text-bottom{
+        top: 82%;
+        width: 40%;
+        font-size: 11px;
+        font-weight: 800;
+        line-height: 12px;
+        transition: all ease 0.5s;
+    }
+    /* footer */
+    #footer>h6{
+        margin-left: 1%;
+        font-size: 12px;
+        font-weight: 100;
+        text-transform: uppercase;
+        transition: all ease 0.5s;
+    }
+    #footer>h5{
+        margin-right: 10%;
+        font-weight: 900;
+        letter-spacing: 1px;
+        transform: translate(50%);
+        transition: all ease 0.5s;
+    }
+}
+
+
+/* mobile phone */
+@media (max-width:500px){
+    #navbar #left{
+        font-size: 12px;
+        letter-spacing: 1px;
+        font-weight: 100;
+        transition: all ease 0.5s;
+    }
+    #navbar #middle{
+        color: darkgoldenrod;
+        letter-spacing: 1px;
+        margin-right: 8%;
+        transition: all ease 0.5s;
+    }
+    #navbar #right{
+        letter-spacing: 4px;
+        font-size: 15px;
+        transition: all ease 0.5s;
+    }
+    /*video div*/
+    #video-div{
+        top: 10%;
+        font-size: 15px;
+        transition: all ease 0.5s;
+    }
+    #text-div{
+        font-size:14px ;
+        line-height: 15px;
+        top: 28%;
+        width: 85%;
+        transition: all ease 0.5s;
+    }
+    #main>img{
+        height: 450px;
+        width: 300px;
+        object-fit: cover;
+        transition:all ease 1s;
+    }
+    #scroll-div h1, #scroll-div2 h1, #scroll-div3 h1{
+        font-size: 80px;
+        transition: all ease 0.5s;
+    }
+    #scroll-div,#scroll-div2,#scroll-div3{
+        transition: all ease 0.5s;
+    }
+    #scroll-div{
+        top: 34%;
+    }
+    #scroll-div2{
+        top: 45%;
+    }
+    #scroll-div3{
+        top: 57%;
+    }
+    /*bottom text*/
+    #text-bottom{
+        width: 40%;
+        top: 80%;
+        font-size: 14px;
+        font-weight: 800;
+        line-height: 14px;
+        transition: all ease 0.5s;
+    }
+    /* footer */
+    #footer>h6{
+        margin-left: 1%;
+        font-size: 12px;
+        font-weight: 100;
+        text-transform: uppercase;
+        transition: all ease 0.5s;
+    }
+    #footer>h5{
+        margin-right: 10%;
+        font-weight: 900;
+        letter-spacing: 1px;
+        transform: translate(50%);
+        transition: all ease 0.5s;
+    }
+}
